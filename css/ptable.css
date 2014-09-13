@@ -280,4 +280,8 @@ ul.menu_hz_categories li a:active, ul.menu_hz_base li a:active.selected {
 	color: #fffeff;
 }
 
+.button .active{
+	background-color: red
+}
+
 /* @end */
