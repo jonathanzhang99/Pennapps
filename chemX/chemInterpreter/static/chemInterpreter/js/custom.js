@@ -33,7 +33,7 @@ for (var i = 0; i < elements.length; i++) {
 			// xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
 			/*
 			* {
-			*    "type": {{"compound", "element"}},
+			*    "chemType": {{"compound", "element", "periodicTable"}},
 			*    "data": {{data}}
 			* }
 			*/
