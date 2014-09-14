@@ -13,23 +13,28 @@ wrapper.fadeTo('slow', 0, function(){
         wrapper.fadeTo('slow', 1);
     });
 });
-
-for (var j=0; i<$(".latexFormat").length; i++){
+latexFormat = $(".latexFormat")
+console.log("Entering")
+for (var j=0; j<latexFormat.length; j++){
+	console.log(latexFormat[j]);
 	var place = j
-	$(".latexFormat")[place].addEventListener("onchange", function() {
+	latexFormat[place].onkeyup =  function() {
+		console.log(latexFormat[place].value);
 		$.ajax({
 			url: "/",
 			type: "POST",
-			data: {"name": $(".latexFormat")[place].name}
-		});
-	})
+			data: {"name": latexFormat[place].name, "value": latexFormat[place].value}
+		}).done(function( html ){
+			console.log("done")
+		})
+	}
 }
 var elements = document.getElementsByClassName("modal");
 var disableHover = false;
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseenter", function() {
 		if (!disableHover) {
-            console.log(this.outerHTML);
+            // console.log(this.outerHTML);
 			var xhr = new XMLHttpRequest();
 			$("#holder").html(this.outerHTML);
             document.getElementById("holder").firstChild.style.width="80px";
