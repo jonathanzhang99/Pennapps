@@ -19,13 +19,20 @@ for (var j=0; j<latexFormat.length; j++){
 	console.log(latexFormat[j]);
 	var place = j
 	latexFormat[place].onkeyup =  function() {
-		console.log(latexFormat[place].value);
-		xhr = new XMLHttpRequest()
+		console.log(this.value);
+		latexFormatQueries = []
+		for (var i =0;i<4;i++){
+			latexFormatQueries.push(latexFormat[i].value)
+		}
+		var xhr = new XMLHttpRequest()
 		xhr.open("POST", "/", false);
-		xhr.send(JSON.stringify{
+		xhr.send(JSON.stringify({
 			"chemType": "element",
-			"value": latexFormat[place].value
-		});
+			"name": $("#holder").children()[0].children[1].children[0].innerHTML,
+			"value": latexFormatQueries
+		}));
+		$("#latex").html("\\[ " + xhr.response + " \\]");
+		MathJax.Hub.Queue(["Typeset", MathJax.Hub, "latex"]);
 		// $.ajax({
 		// 	url: "/",
 		// 	type: "POST",
@@ -99,10 +106,10 @@ $("#searchinput").keyup(function() {
 	if (this.value) {
 		xhr = new XMLHttpRequest()
 		xhr.open("POST", "/", false);
-		xhr.send(JSON.stringify{
-			"chemType": "element",
-			"value": this.value;
-		});
+		xhr.send(JSON.stringify({
+			"chemType": "compound",
+			"value": this.value
+		}));
 		addAutocompleteWord(this.value);
 	} else {
 		removeAllAutocompleteWords();
