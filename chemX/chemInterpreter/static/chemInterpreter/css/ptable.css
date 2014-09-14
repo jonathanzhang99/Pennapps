@@ -141,7 +141,7 @@ a.symb:active {
 	background-color: #E69797;
 	border: 1px solid #cc6666;
 	text-align: center;
-	min-width: 28px;
+	min-width: 20px;
 }
 
 .xs:hover{
@@ -158,7 +158,7 @@ a.symb:active {
 	background-color: #8CD5E6;
 	border: 1px solid #3FA5D1;
 	text-align: center;
-	min-width: 28px;
+	min-width: 20px;
 }
 
 .xp:hover{
@@ -175,7 +175,7 @@ a.symb:active {
 	background-color: #E8E66B;
 	border: 1px solid #D1C53F;
 	text-align: center;
-	min-width: 28px;
+	min-width: 20px;
 }
 
 .xd:hover{
@@ -192,7 +192,7 @@ a.symb:active {
 	background-color: #43E0A2;
 	border: 1px solid #34BF75;
 	text-align: center;
-	min-width: 28px;
+	min-width: 20px;
 }
 
 .xf:hover{
@@ -208,7 +208,7 @@ a.symb:active {
 	background-color: #cc33ff;
 	border: 1px solid #34BF75;
 	text-align: center;
-	min-width: 28px;
+	min-width: 20px;
 }
 
 .xg:hover {
@@ -223,7 +223,7 @@ a.symb:active {
 	background-color: #cccccc;
 	border: 1px solid #34BF75;
 	text-align: center;
-	min-width: 28px;
+	min-width: 20px;
 }
 
 .xz:hover{

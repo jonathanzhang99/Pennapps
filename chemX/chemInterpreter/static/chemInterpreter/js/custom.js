@@ -29,8 +29,8 @@ var disableHover = false;
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseenter", function() {
 		if (!disableHover) {
-
             console.log(this.outerHTML);
+			var xhr = new XMLHttpRequest();
 			$("#holder").html(this.outerHTML);
             $("#holder").firstChild.style.width="80px";
             $("#holder").firstChild.style.height="83px";
