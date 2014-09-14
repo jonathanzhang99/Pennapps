@@ -9,8 +9,10 @@ security_token = "132fb6c6-5179-4ce4-9b4f-2e9ee518d143"
 def textToLatex(name, charge=None, number=None, neutrons=None, atomicMass=None):
 	latexstr = '/ce{%s}'
 	latexname = name
+
 	if number != None and number > 1:
-		latexname + str(number)
+
+		latexname += str(number)
 	if charge != None and charge != 0:
 		latexname + "^"
 		sign = ''
@@ -21,13 +23,13 @@ def textToLatex(name, charge=None, number=None, neutrons=None, atomicMass=None):
 
 		if abs(charge) != 1:
 			sign + str(abs(charge))
-		latexname = format(latexname + "%s", sigh)
+		latexname = latexname + "%s" % sign
 	if neutrons != None:
 		latexname = "_{" + str(neutrons) + "}" + latexname
 	if atomicMass != None:
 		latexname = "^{" + str(atomicMass) + "}" + latexname
 
-	return format(latexstr, latexname)
+	return latexstr % latexname
 
 
 def index(req):
@@ -41,11 +43,9 @@ def index(req):
 			current_chem_symbol = CS.search(body)
 
 		elif body.chemType == 'periodicTable':
-			return JSONResponsetextToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass)
+			return JSONResponse({"latex": str(textToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass))})
 		else:
 			return
-
-
 	
 	else:
 		template = loader.get_template('chemInterpreter/index.html')
