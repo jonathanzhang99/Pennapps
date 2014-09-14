@@ -13,20 +13,39 @@ wrapper.fadeTo('slow', 0, function(){
         wrapper.fadeTo('slow', 1);
     });
 });
-
-
+latexFormat = $(".latexFormat")
+console.log("Entering")
+for (var j=0; j<latexFormat.length; j++){
+	console.log(latexFormat[j]);
+	var place = j
+	latexFormat[place].onkeyup =  function() {
+		console.log(latexFormat[place].value);
+		$.ajax({
+			url: "/",
+			type: "POST",
+			data: {"name": latexFormat[place].name, "value": latexFormat[place].value}
+		}).done(function( html ){
+			console.log("done")
+		})
+	}
+}
 var elements = document.getElementsByClassName("modal");
 var disableHover = false;
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseenter", function() {
 		if (!disableHover) {
+            // console.log(this.outerHTML);
 			var xhr = new XMLHttpRequest();
 			$("#holder").html(this.outerHTML);
-            $("#holder").firstChild.style.width="80px";
-            $("#holder").firstChild.style.height="83px";
-            $("#holder").firstChild.style.fontSize="200%";
-            $("#holder").firstChild.style.verticalAlign="top-text";
-            $("#holder").style.marginTop="10px";
+            document.getElementById("holder").firstChild.style.width="80px";
+            document.getElementById("holder").firstChild.style.height="83px";
+            document.getElementById("holder").firstChild.style.fontSize="200%";
+            document.getElementById("holder").firstChild.style.verticalAlign="top-text";
+            document.getElementById("holder").style.marginTop="10px";
+            // jqxhr = $.ajax{
+            // 	url: "/",
+            // 	data: {}
+            // }
 			// this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
 			// xhr.open("POST", serverURL /* to be filled in */ , false /* make async later */ );
 			// xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
@@ -37,12 +56,14 @@ for (var i = 0; i < elements.length; i++) {
 			* }
 			*/
 		}
+
     });
 	elements[i].addEventListener("click", function() {
 		if (disableHover == true) {
 			disableHover = false;
 			document.getElementById("holder").innerHTML = "";
 		} else {
+			var xhr = new XMLHttpRequest();
 			disableHover = true;
 			$("#holder").html(this.outerHTML);
             document.getElementById("holder").firstChild.style.width="80px";
