@@ -16,6 +16,7 @@ wrapper.fadeTo('slow', 0, function(){
 
 
 var elements = document.getElementsByClassName("modal");
+var disableHover = false;
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseenter", function() {
 		if (!disableHover) {
