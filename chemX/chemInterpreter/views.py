@@ -44,7 +44,10 @@ def index(req):
 
 		elif body.chemType == 'periodicTable':
 			return JSONResponse({"latex": str(textToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass))})
+<<<<<<< HEAD
 			
+=======
+>>>>>>> FETCH_HEAD
 		else:
 			return
 	

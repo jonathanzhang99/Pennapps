@@ -872,6 +872,7 @@
                         </div>
                             <div class="large-7 columns">
                                 <center>
+                                {% csrf_token %}
                                 <!--<button style="font-family: 'Open Sans Condensed', sans-serif;color:black;background-color:#8CD5E6" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>-->
                                 <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:60px">
                                     <input class="latexFormat" name="neutrons" type="text" placeholder="Neutrons    " style="border-radius:5px">
@@ -888,6 +889,7 @@
 										</div>
 									</div>
 								</div>
+                                {% csrf_token %}
                                 <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:90px;margin-left:60px">
                                     <input class="latexFormat" name="atomicMass" type="text" placeholder="Atomic Mass" style="border-radius:5px">
                                 </div>

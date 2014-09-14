@@ -20,13 +20,18 @@ for (var j=0; j<latexFormat.length; j++){
 	var place = j
 	latexFormat[place].onkeyup =  function() {
 		console.log(latexFormat[place].value);
-		$.ajax({
-			url: "/",
-			type: "POST",
-			data: {"name": latexFormat[place].name, "value": latexFormat[place].value}
-		}).done(function( html ){
-			console.log("done")
+		xhr = new XMLHttpRequest()
+		xhr.open("POST", "/", false);
+		xhr.send({
+			
 		})
+		// $.ajax({
+		// 	url: "/",
+		// 	type: "POST",
+		// 	data: {'csrfmiddlewaretoken': '{{csrf_token}}', "typeChem":"periodicTable", "name": latexFormat[place].name, "value": latexFormat[place].value}
+		// }).done(function( html ){
+		// 	console.log("done")
+		// })
 	}
 }
 var elements = document.getElementsByClassName("modal");
