@@ -22,11 +22,24 @@
 {% block content %}
 <body>
     <br>
+    <div class="row">
+    <div id="search">
+        <div class="row collapse" style="width:620px;position:absolute;margin-top:10px;z-index:1;left:-7%;">
+            <div class="small-11 columns">
+                <input type='text' id="searchinput" placeholder="Search..."/>
+                <div id="autocompletion" style="margin:0;padding:0;vertical-align:text-top;padding-left:10px;margin-top:-17px;top-border:0px;"></div>
+            </div>
+            <div class="small-1 columns">
+                <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#4285f4;border-radius:1px;z-index:5;margin-top:-1px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:8px;padding-bottom:8px;padding-left:20px;padding-right:20px;" >Go</span>
+            </div>
+        </div>
+    </div>
+    </div>
     <br>
-    <table id="pertable" style="padding:15px;float:left;clear:both;position:fixed;left:4%;">
+    <br>
+    <table id="pertable" style="padding:15px;clear:both;position:absolute;left:-7%;margin-top:160px;">
         <div class="row">
-            <div class="large-7 columns" style="left:5%">
-
+            <div class="large-7 columns" style="left:-7%">
             </div>
         </div>
         <tbody>
@@ -804,23 +817,11 @@
             <br>
         </div>
         <div class="large-6 columns">
-            <div class="panel" style="left:20%; position:absolute;border-radius:10px;margin-bottom:-100px;">
+            <div class="panel" style="left:20%; position:absolute;border-radius:5px;margin-bottom:-1000px;">
                 <div style="width: 450px;">
 
                     <div class="row">
                         <div class="large-5 columns" style="font-family: 'Open Sans Condensed', sans-serif;border-right-style:solid;border-right-width:1px;">
-                            <div id="search">
-                                <div class="row collapse">
-                                    <div class="small-9 columns">
-                                        <input type='text' id="searchinput" placeholder="Search..."/>
-                                        <div id="autocompletion" style="box-shadow: 2px 2px 3px #888888;margin:0;padding:0;vertical-align:text-top;padding-left:10px;border:1px solid;margin-top:-18px;top-border:0px;"></div>
-                                    </div>
-                                    <div class="small-3 columns">
-                                        <span class="postfix">Go</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
                             <hr>Standard Atomic Mass
                             <hr>Element Category
                             <hr>Electron Config
@@ -843,27 +844,27 @@
                         <center>
                             <div class="large-7 columns">
 
-                                <button style="font-family: 'Open Sans Condensed', sans-serif;color:black;" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>
+                                <!--<button style="font-family: 'Open Sans Condensed', sans-serif;color:black;background-color:#8CD5E6" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>-->
 
-                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:60px;margin-left:25px">
-                                    <input type="text" placeholder="#N" style="border-radius:10px">
+                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:25px">
+                                    <input type="text" placeholder="#N" style="border-radius:5px">
                                 </div>
-                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:60px;margin-right:40px;">
-                                    <input type="text" placeholder="Charge" style="border-radius:10px">
+                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:10px;margin-right:40px;">
+                                    <input type="text" placeholder="Charge" style="border-radius:5px">
                                 </div>
                                 <br>
 								<div id="holder">
-									<div class="xp modal" style="width:80px; height:83px; font-size:200%; " >
+									<div class="xs modal" style="width:80px; height:83px; font-size:200%; " >
 										<div class="at_num">1</div>
 										<div class="symbol"><abbr class="sym" title="">H</abbr>
 										</div>
 									</div>
 								</div>
-                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:140px;margin-left:25px">
-                                    <input type="text" placeholder="#AtMass" style="border-radius:10px">
+                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:90px;margin-left:25px">
+                                    <input type="text" placeholder="#AtMass" style="border-radius:5px">
                                 </div>
-                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:140px;margin-right:40px;">
-                                    <input type="text" placeholder="#At" style="border-radius:10px">
+                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:90px;margin-right:40px;">
+                                    <input type="text" placeholder="#At" style="border-radius:5px">
                                 </div>
                             </div>
                         </center>
@@ -872,6 +873,14 @@
             </div>
         </div>
         
+    </div>
+    <div class="panel" style="margin-top:420px;left:59.7%;width:495px;position:absolute;">
+        <p style="font-family: 'Open Sans Condensed', sans-serif;vertical-align:text-top;">Latex: <span id="Latex"></span></p>
+        <hr>
+        <p style="font-family: 'Open Sans Condensed', sans-serif;vertical-align:text-top;">Copy Pastable Plain Text: <spain id="plaintext"></spain></p>
+        <hr>
+    <input type="text" placeholder="Copy-Pastable Plaintext Here" style="margin-top:420px;left:59.7%;width:495px;position:absolute;display:none;">
+    </div>
     </div>
 
 	<div style="right:20%; clear: both;position:absolute" id="details">
