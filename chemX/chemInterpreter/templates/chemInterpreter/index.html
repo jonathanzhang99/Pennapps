@@ -2,24 +2,25 @@
 <html>
 
 <head>
+{% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Periodic Table of the Elements by WebElements</title>
-
-    <link rel="stylesheet" type="text/css" media="all" href="css/layout.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/zblock.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/ptable.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='https://squaredorito.github.io/css/foundation.css'>
+    <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/layout.css" %}" >
+    <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/style.css" %}">
+    <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/zblock.css" %}">
+    <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/ptable.css" %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
     <link rel="shortcut icon" href="favicon.png">
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/extensions/TeX/mhchem.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <style type="text/css"></style>
 </head>
-
-<body style="background:#555">
+{% block content %}
+<body>
     <br>
     <br>
     <table id="pertable" style="padding:15px;float:left;clear:both;position:fixed;left:4%;">
@@ -918,5 +919,5 @@
 		});
 	</script>
 </body>
-
+{% endblock %}
 </html>
