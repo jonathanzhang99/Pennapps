@@ -50,7 +50,7 @@ def index(req):
 		if body.chemType == 'compound':
 			CS = ChemSpider(security_token)
 			current_chem_symbol = CS.search(body)
-			return JSONResponse({"latex": str(formulaToLatex(CS[0].molecularFormula))})
+			return JSONResponse({"latex": str([formulaToLatex(c.molecularFormula) for c in current_chem_symbol])})
 
 		elif body.chemType == 'element':
 			return JSONResponse({"latex": str(textToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass))})
