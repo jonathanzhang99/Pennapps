@@ -802,6 +802,10 @@
     </table>
 	<div style="right:20%; clear: both;position:absolute" id="details">
 	</div>
+	<div id="search">
+		<input type='text' id="searchinput" />
+		<div id="autocompletion" style="box-shadow: 2px 2px 3px #888888;"></div>
+	</div>
 	<script>
 		var elements = document.getElementsByClassName("modal");
 		for (var i = 0; i < elements.length; i++) {
@@ -812,6 +816,26 @@
 				xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
 			});
 		}
+		function addAutocompleteWord(word) {
+			$("#autocompletion").append("<p name='autocompletion' value='" +  word + "'>" + word + "</p>");
+		}
+		function removeAutocompleteWord(word) {
+			for (var i = 0; i < $("#autocompletion").children().length; i++) {
+				if ($("#autocompletion").children()[i].innerHTML == word) {
+					$("#autocompletion").children()[i].remove();
+				}
+			}
+		}
+		function removeAllAutocompleteWords() {
+			$("#autocompletion").empty();
+		}
+		$("#searchinput").keyup(function() {
+			if (this.value) {
+				addAutocompleteWord(this.value);
+			} else {
+				removeAllAutocompleteWords();
+			}
+		});
 	</script>
 </body>
 </html>
