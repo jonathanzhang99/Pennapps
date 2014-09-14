@@ -21,10 +21,39 @@
 </head>
 {% block content %}
 <body>
+    <nav class="top-bar" data-topbar role="navigation" style="font-size:5000%;">
+      <ul class="title-area">
+        <li class="name">
+          <h1 style="font-family: 'Open Sans Condensed', sans-serif;"><a href="#">chemX</a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a style="font-family: 'Open Sans Condensed', sans-serif;" href="#">Right Button Active</a></li>
+          <li class="has-dropdown">
+            <a href="#" style="font-family: 'Open Sans Condensed', sans-serif;">Right Button Dropdown</a>
+            <ul class="dropdown">
+              <li><a href="#">First link in dropdown</a></li>
+              <li class="active"><a href="#">Active link in dropdown</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><a href="#" style="font-family: 'Open Sans Condensed', sans-serif;">Left Nav Button</a></li>
+        </ul>
+      </section>
+    </nav>
+    <br>
     <br>
     <div class="row">
     <div id="search">
-        <div class="row collapse" style="width:620px;position:absolute;margin-top:10px;z-index:1;left:-7%;">
+        <div class="row collapse" style="width:540px;position:absolute;margin-top:10px;z-index:1;left:22%;">
             <div class="small-11 columns">
                 <input type='text' id="searchinput" placeholder="Search..."/>
                 <div id="autocompletion" style="margin:0;padding:0;vertical-align:text-top;padding-left:10px;margin-top:-17px;top-border:0px;"></div>
@@ -37,7 +66,7 @@
     </div>
     <br>
     <br>
-    <table id="pertable" style="padding:15px;clear:both;position:absolute;left:-7%;margin-top:160px;">
+    <table id="pertable" style="padding:15px;clear:both;position:absolute;left:-7%;margin-top:60px;">
         <div class="row">
             <div class="large-7 columns" style="left:-7%">
             </div>
@@ -812,16 +841,16 @@
             </tr>
         </tbody>
     </table>
-    <div class="row" style="font-family: 'Open Sans Condensed', sans-serif;">
-        <div class="large-6 columns">
+    <div class="row" style="font-family: 'Open Sans Condensed', sans-serif;margin-top:60px;margin-bottom:200px;">
+        <div class="large-3 columns">
             <br>
         </div>
-        <div class="large-6 columns">
-            <div class="panel" style="left:20%; position:absolute;border-radius:5px;margin-bottom:-1000px;">
-                <div style="width: 450px;">
+        <div class="large-9 columns">
+            <div class="panel" style="left:40%; position:absolute;border-radius:5px;margin-bottom:-1000px;left:37%">
+                <div style="width: 520px;">
 
                     <div class="row">
-                        <div class="large-5 columns" style="font-family: 'Open Sans Condensed', sans-serif;border-right-style:solid;border-right-width:1px;">
+                        <div class="large-5 columns" style="font-family: 'Open Sans Condensed', sans-serif;border-right-style:solid;border-right-width:1px;width:200px">
                             <hr>Standard Atomic Mass
                             <hr>Element Category
                             <hr>Electron Config
@@ -841,47 +870,57 @@
                             <hr>Crystal Structure
                             <hr style="margin-bottom:-2px;">
                         </div>
-                        <center>
                             <div class="large-7 columns">
-
+                                <center>
                                 <!--<button style="font-family: 'Open Sans Condensed', sans-serif;color:black;background-color:#8CD5E6" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>-->
 
-                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:25px">
+                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:60px">
                                     <input type="text" placeholder="#N" style="border-radius:5px">
                                 </div>
                                 <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:10px;margin-right:40px;">
                                     <input type="text" placeholder="Charge" style="border-radius:5px">
                                 </div>
                                 <br>
-								<div id="holder">
+								<div id="holder" style="margin-left:35px;">
 									<div class="xs modal" style="width:80px; height:83px; font-size:200%; " >
 										<div class="at_num">1</div>
 										<div class="symbol"><abbr class="sym" title="">H</abbr>
 										</div>
 									</div>
 								</div>
-                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:90px;margin-left:25px">
+                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:90px;margin-left:60px">
                                     <input type="text" placeholder="#AtMass" style="border-radius:5px">
                                 </div>
                                 <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:90px;margin-right:40px;">
                                     <input type="text" placeholder="#At" style="border-radius:5px">
                                 </div>
+                                </center>
                             </div>
-                        </center>
+                        <div class="row">
+                            <div class="large-12 columns">
+                            <hr>
+                                <center>
+                                <p>Latex:<span id="latex"><br><br></span></p>
+                                </center>
+                                <hr>
+                                <center>
+                                <p>Plaintext:<span id="latex"><br></span></p>
+                                </center>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         
     </div>
-    <div class="panel" style="margin-top:420px;left:59.7%;width:495px;position:absolute;">
-        <p style="font-family: 'Open Sans Condensed', sans-serif;vertical-align:text-top;">Latex: <span id="Latex"></span></p>
-        <hr>
-        <p style="font-family: 'Open Sans Condensed', sans-serif;vertical-align:text-top;">Copy Pastable Plain Text: <spain id="plaintext"></spain></p>
-        <hr>
-    <input type="text" placeholder="Copy-Pastable Plaintext Here" style="margin-top:420px;left:59.7%;width:495px;position:absolute;display:none;">
+    <br><br>
     </div>
-    </div>
+
+    <br>
+    <br>
 
 	<div style="right:20%; clear: both;position:absolute" id="details">
 	</div>
