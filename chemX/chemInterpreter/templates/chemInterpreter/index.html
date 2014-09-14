@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-
-<head>
 {% load staticfiles %}
+<head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Periodic Table of the Elements by WebElements</title>
@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/zblock.css" %}">
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/ptable.css" %}">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
     <link rel="shortcut icon" href="favicon.png">
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/extensions/TeX/mhchem.js"></script>
@@ -873,51 +872,13 @@
             </div>
         </div>
     </div>
-    </div>
-    <script>
-        var elements = document.getElementsByClassName("modal");
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].addEventListener("click", function() {
-                var xhr = new XMLHttpRequest();
-                // this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
-                xhr.open("POST", serverURL /* to be filled in */ , false /* make async later */ );
-                xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
-            });
-        }
-    </script>
+    </div>z
+
 	<div style="right:20%; clear: both;position:absolute" id="details">
 	</div>
-	<script>
-		var elements = document.getElementsByClassName("modal");
-		for (var i = 0; i < elements.length; i++) {
-			elements[i].addEventListener("click", function() {
-				var xhr = new XMLHttpRequest();
-				// this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
-				xhr.open("POST", serverURL /* to be filled in */, false /* make async later */);
-				xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
-			});
-		}
-		function addAutocompleteWord(word) {
-			$("#autocompletion").append("<p name='autocompletion' style='margin-bottom:5px;margin-top:5px;' value='" +  word + "'>" + word + "</p>");
-		}
-		function removeAutocompleteWord(word) {
-			for (var i = 0; i < $("#autocompletion").children().length; i++) {
-				if ($("#autocompletion").children()[i].innerHTML == word) {
-					$("#autocompletion").children()[i].remove();
-				}
-			}
-		}
-		function removeAllAutocompleteWords() {
-			$("#autocompletion").empty();
-		}
-		$("#searchinput").keyup(function() {
-			if (this.value) {
-				addAutocompleteWord(this.value);
-			} else {
-				removeAllAutocompleteWords();
-			}
-		});
-	</script>
+    <style type="text/javascript" src="{% static "chemInterpreter/js/custom.js" %}"></style>
+    <style type="text/javascript" src="{% static "chemInterpreter/js/vex.js" %}"></style>
+	
 </body>
 {% endblock %}
 </html>

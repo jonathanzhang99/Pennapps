@@ -5,6 +5,6 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'chemX.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^chem/', include('chemInterpreter.urls')),
+    url(r'^$', include('chemInterpreter.urls')),
     url(r'^admin/', include(admin.site.urls))
 )
