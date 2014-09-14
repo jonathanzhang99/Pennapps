@@ -53,7 +53,7 @@ def index(req):
 		elif body.chemType == 'element':
 			return JSONResponse({"latex": str(textToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass))})
 
-		else
+		else:
 			return
 	
 	else:
