@@ -50,7 +50,8 @@ for (var i = 0; i < elements.length; i++) {
             document.getElementById("holder").firstChild.style.height="83px";
             document.getElementById("holder").firstChild.style.fontSize="200%";
             document.getElementById("holder").firstChild.style.verticalAlign="top-text";
-            document.getElementById("holder").style.marginTop="10px";	}
+            document.getElementById("holder").style.marginTop="10px";
+		}
 	});
 }
 
