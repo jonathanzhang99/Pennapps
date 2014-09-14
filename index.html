@@ -809,6 +809,18 @@
 
                     <div class="row">
                         <div class="large-5 columns" style="font-family: 'Open Sans Condensed', sans-serif;border-right-style:solid;border-right-width:1px;">
+                            <div id="search">
+                                <div class="row collapse">
+                                    <div class="small-9 columns">
+                                        <input type='text' id="searchinput" placeholder="Search..."/>
+                                        <div id="autocompletion" style="box-shadow: 2px 2px 3px #888888;margin:0;padding:0;vertical-align:text-top;padding-left:10px;border:1px solid;margin-top:-18px;top-border:0px;"></div>
+                                    </div>
+                                    <div class="small-3 columns">
+                                        <span class="postfix">Go</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
                             Atomic Number
                             <hr>Standard Atomic Mass
                             <hr>Element Category
@@ -831,7 +843,9 @@
                         </div>
                         <center>
                             <div class="large-7 columns">
+
                                 <button style="font-family: 'Cabin Condensed', sans-serif;" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>
+
                                 <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:60px;margin-left:25px">
                                     <input type="text" placeholder="#N" style="border-radius:10px">
                                 </div>
@@ -872,10 +886,6 @@
     </script>
 	<div style="right:20%; clear: both;position:absolute" id="details">
 	</div>
-	<div id="search">
-		<input type='text' id="searchinput" />
-		<div id="autocompletion" style="box-shadow: 2px 2px 3px #888888;"></div>
-	</div>
 	<script>
 		var elements = document.getElementsByClassName("modal");
 		for (var i = 0; i < elements.length; i++) {
@@ -887,7 +897,7 @@
 			});
 		}
 		function addAutocompleteWord(word) {
-			$("#autocompletion").append("<p name='autocompletion' value='" +  word + "'>" + word + "</p>");
+			$("#autocompletion").append("<p name='autocompletion' style='margin-bottom:5px;margin-top:5px;' value='" +  word + "'>" + word + "</p>");
 		}
 		function removeAutocompleteWord(word) {
 			for (var i = 0; i < $("#autocompletion").children().length; i++) {
