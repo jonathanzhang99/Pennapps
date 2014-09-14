@@ -14,13 +14,22 @@ wrapper.fadeTo('slow', 0, function(){
     });
 });
 
-
+for (var j=0; i<$(".latexFormat").length; i++){
+	var place = j
+	$(".latexFormat")[place].addEventListener("onchange", function() {
+		$.ajax({
+			url: "/",
+			type: "POST",
+			data: {"name": $(".latexFormat")[place].name}
+		});
+	})
+}
 var elements = document.getElementsByClassName("modal");
 var disableHover = false;
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseenter", function() {
 		if (!disableHover) {
-			var xhr = new XMLHttpRequest();
+
             console.log(this.outerHTML);
 			$("#holder").html(this.outerHTML);
             $("#holder").firstChild.style.width="80px";
@@ -28,6 +37,10 @@ for (var i = 0; i < elements.length; i++) {
             $("#holder").firstChild.style.fontSize="200%";
             $("#holder").firstChild.style.verticalAlign="top-text";
             $("#holder").style.marginTop="10px";
+            // jqxhr = $.ajax{
+            // 	url: "/",
+            // 	data: {}
+            // }
 			// this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
 			// xhr.open("POST", serverURL /* to be filled in */ , false /* make async later */ );
 			// xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
@@ -38,12 +51,14 @@ for (var i = 0; i < elements.length; i++) {
 			* }
 			*/
 		}
+
     });
 	elements[i].addEventListener("click", function() {
 		if (disableHover == true) {
 			disableHover = false;
 			document.getElementById("holder").innerHTML = "";
 		} else {
+			var xhr = new XMLHttpRequest();
 			disableHover = true;
 			$("#holder").html(this.outerHTML);
             document.getElementById("holder").firstChild.style.width="80px";
