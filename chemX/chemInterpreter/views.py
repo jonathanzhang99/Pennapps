@@ -34,19 +34,21 @@ def textToLatex(name, charge=None, number=None, neutrons=None, atomicMass=None):
 
 def formulaToLatex(name):
 	latexstr = '/ce{%s}'
-	latexname = ''
-	elements = re.findall('[A-Z][^A-Z]*', name)
-	for (elem in elements):
-		
+	elements = name.replace("_", "")
+	elements = elements.replace("{", "")
+	elements = elements.replace("}", "")
+	return latexstr % elements
+
 def index(req):
 
 	if req.method == "POST":
 		response = HttpResponse
 		body = req.body
 		chemType = req.chemType
-		if body.chemType == 'element':
+		if body.chemType == 'compound':
 			CS = ChemSpider(security_token)
 			current_chem_symbol = CS.search(body)
+			return JSONResponse({"latex": str(formulaToLatex(CS[0].molecularFormula))})
 
 		elif body.chemType == 'periodicTable':
 			return JSONResponse({"latex": str(textToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass))})
