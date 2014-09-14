@@ -21,7 +21,6 @@ for (var j=0; j<latexFormat.length; j++){
 	latexFormat[place].onkeyup =  function() {
 		console.log(latexFormat[place].value);
 		xhr = new XMLHttpRequest()
-		var csrftoken = $.cookie('csrftoken')
 		xhr.open("POST", "/", false);
 		xhr.send({
 			
@@ -57,7 +56,7 @@ for (var i = 0; i < elements.length; i++) {
 			// xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
 			/*
 			* {
-			*    "chemType": {{"compound", "element", "periodicTable"}},
+			*    "chemType": {{"compound", "element"}},
 			*    "data": {{data}}
 			* }
 			*/
