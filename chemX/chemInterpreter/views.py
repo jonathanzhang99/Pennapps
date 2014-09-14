@@ -24,7 +24,7 @@ def textToLatex(name, charge=None, number=None, neutrons=None, atomicMass=None):
 			sign = '-'
 
 		if abs(charge) != 1:
-			sign + str(abs(charge))
+			sign = str(abs(charge))+sign
 		latexname = latexname + "%s" % sign
 	if neutrons != None:
 		latexname = "_{" + str(neutrons) + "}" + latexname
@@ -50,7 +50,10 @@ def index(req):
 		if body.chemType == 'compound':
 			CS = ChemSpider(security_token)
 			current_chem_symbol = CS.search(body)
-			return JSONResponse({"latex": str([formulaToLatex(c.molecularFormula) for c in current_chem_symbol])})
+			returned_responses = [formulaToLatex(c.molecularFormula) for c in current_chem_symbol]
+			if len(returned_responses) > 4:
+				returned_responses = returned_responses[:4]
+			return JSONResponse({"latex": str(returned_resposnes)})
 
 		elif body.chemType == 'element':
 			return JSONResponse({"latex": str(textToLatex(body.name, body.charge, body.number, body.neutrons, body.atomicMass))})
