@@ -17,11 +17,12 @@ wrapper.fadeTo('slow', 0, function(){
 
 var elements = document.getElementsByClassName("modal");
 for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", function() {
+    elements[i].addEventListener("hover", function() {
         var xhr = new XMLHttpRequest();
+		document.getElementById("holder").innerHTML = this.innerHTML;
         // this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
-        xhr.open("POST", serverURL /* to be filled in */ , false /* make async later */ );
-        xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
+		// xhr.open("POST", serverURL /* to be filled in */ , false /* make async later */ );
+        // xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
     });
 }
 
