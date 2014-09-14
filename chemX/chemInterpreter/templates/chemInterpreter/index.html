@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Periodic Table of the Elements by WebElements</title>
+    <title>chemX | Home</title>
     <link rel='stylesheet' href='https://squaredorito.github.io/css/foundation.css'>
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/layout.css" %}" >
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/style.css" %}">
@@ -59,7 +59,7 @@
                 <div id="autocompletion" style="margin:0;padding:0;vertical-align:text-top;padding-left:10px;margin-top:-17px;top-border:0px;"></div>
             </div>
             <div class="small-1 columns">
-                <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#4285f4;border-radius:1px;z-index:5;margin-top:-1px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:8px;padding-bottom:8px;padding-left:20px;padding-right:20px;" >Go</span>
+                <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#4285f4;border-radius:1px;z-index:5;margin-top:-1px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:8px;padding-bottom:8px;padding-left:20px;padding-right:20px;" >Go</button>
             </div>
         </div>
     </div>
@@ -875,7 +875,7 @@
                                 {% csrf_token %}
                                 <!--<button style="font-family: 'Open Sans Condensed', sans-serif;color:black;background-color:#8CD5E6" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>-->
                                 <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:60px">
-                                    <input class="latexFormat" name="neutrons" type="text" placeholder="Neutrons    " style="border-radius:5px">
+                                    <input class="latexFormat" id="neutrons" name="neutrons" type="text" placeholder="Neutrons    " style="border-radius:5px">
 
                                 </div>
                                 <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:10px;margin-right:40px;">
@@ -897,6 +897,14 @@
                                     <input class="latexFormat" name="number" type="text" placeholder="Number" style="border-radius:5px">
                                 </div>
                                 </center>
+
+                                <div class="row" style="margin-left:48px;">
+                                    <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >+</button>
+                                    <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >-</button>
+                                    <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >&#8594;</button>
+                                    <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >&#8592;</button>
+                                    <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >&#8596;</button>
+                                </div>
                             </div>
                         <div class="row">
                             <div class="large-12 columns">
