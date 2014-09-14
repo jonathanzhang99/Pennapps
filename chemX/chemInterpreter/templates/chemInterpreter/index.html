@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Periodic Table of the Elements by WebElements</title>
-
+    <link rel='stylesheet' href='https://squaredorito.github.io/css/foundation.css'>
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/layout.css" %}" >
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/style.css" %}">
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/zblock.css" %}">
     <link rel="stylesheet" type="text/css" media="all" href="{% static "chemInterpreter/css/ptable.css" %}">
-    <link rel='stylesheet' href='https://squaredorito.github.io/css/foundation.css'>
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="favicon.png">
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -800,12 +800,12 @@
             </tr>
         </tbody>
     </table>
-    <div class="row">
+    <div class="row" style="font-family: 'Open Sans Condensed', sans-serif;">
         <div class="large-6 columns">
             <br>
         </div>
         <div class="large-6 columns">
-            <div class="panel" style="left:45%; position:absolute;border-radius:10px;">
+            <div class="panel" style="left:20%; position:absolute;border-radius:10px;">
                 <div style="width: 450px;">
 
                     <div class="row">
@@ -845,7 +845,7 @@
                         <center>
                             <div class="large-7 columns">
 
-                                <button style="font-family: 'Cabin Condensed', sans-serif;" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>
+                                <button style="font-family: 'Open Sans Condensed', sans-serif;color:black;" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>
 
                                 <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:60px;margin-left:25px">
                                     <input type="text" placeholder="#N" style="border-radius:10px">

@@ -288,4 +288,8 @@ ul.menu_hz_categories li a:active, ul.menu_hz_base li a:active.selected {
 	background-color: red
 }
 
+hr{
+	margin:1px;
+}
+
 /* @end */

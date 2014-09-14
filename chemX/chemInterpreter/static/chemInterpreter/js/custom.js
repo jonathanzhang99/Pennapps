@@ -28,7 +28,7 @@ for (var i = 0; i < elements.length; i++) {
 
 
 function addAutocompleteWord(word) {
-	$("#autocompletion").append("<p name='autocompletion' style='margin-bottom:5px;margin-top:5px;' value='" +  word + "'>" + word + "</p>");
+	$("#autocompletion").append("<p name='autocompletion' style='margin:0;padding:0;' value='" +  word + "'>" + word + "</p>");
 }
 function removeAutocompleteWord(word) {
 	for (var i = 0; i < $("#autocompletion").children().length; i++) {
