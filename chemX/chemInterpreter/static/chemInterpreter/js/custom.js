@@ -1,4 +1,3 @@
-
 var container = $('#div-1'),
     wrapper = $('#div-2');
 
@@ -26,15 +25,7 @@ for (var i = 0; i < elements.length; i++) {
     });
 }
 
-var elements = document.getElementsByClassName("modal");
-for (var i = 0; i < elements.length; i++) {
-	elements[i].addEventListener("click", function() {
-		var xhr = new XMLHttpRequest();
-		// this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
-		xhr.open("POST", serverURL /* to be filled in */, false /* make async later */);
-		xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
-	});
-}
+
 function addAutocompleteWord(word) {
 	$("#autocompletion").append("<p name='autocompletion' style='margin-bottom:5px;margin-top:5px;' value='" +  word + "'>" + word + "</p>");
 }
