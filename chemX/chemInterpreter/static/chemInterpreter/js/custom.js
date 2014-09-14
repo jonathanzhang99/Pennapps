@@ -21,6 +21,7 @@ for (var j=0; j<latexFormat.length; j++){
 	latexFormat[place].onkeyup =  function() {
 		console.log(latexFormat[place].value);
 		xhr = new XMLHttpRequest()
+		var csrftoken = $.cookie('csrftoken')
 		xhr.open("POST", "/", false);
 		xhr.send({
 			
