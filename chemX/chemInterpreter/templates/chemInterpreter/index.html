@@ -851,6 +851,8 @@
 
                     <div class="row">
                         <div class="large-5 columns" style="font-family: 'Open Sans Condensed', sans-serif;border-right-style:solid;border-right-width:1px;width:200px">
+                            <b>General Info</b>
+                            <div style="margin-bottom:15px"></div>
                             <hr>Standard Atomic Mass
                             <hr>Element Category
                             <hr>Electron Config
@@ -868,21 +870,21 @@
                             <hr>Oxidation States
                             <hr>Electronegativity
                             <hr>Crystal Structure
-                            <hr style="margin-bottom:-2px;">
+                            <div style="margin-bottom:-10px;"></div>
                         </div>
                             <div class="large-7 columns">
                                 <center>
                                 {% csrf_token %}
                                 <!--<button style="font-family: 'Open Sans Condensed', sans-serif;color:black;background-color:#8CD5E6" class="small radius button" type="button" onclick="$('#pertable').toggle()">Toggle Periodic Table</button>-->
-                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:60px">
+                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:10px;margin-left:25px">
                                     <input class="latexFormat" id="neutrons" name="neutrons" type="text" placeholder="Neutrons    " style="border-radius:5px">
 
                                 </div>
-                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:10px;margin-right:40px;">
+                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:10px;margin-right:80px;">
                                     <input class="latexFormat" name="charge" type="text" placeholder="Charge" style="border-radius:5px">
                                 </div>
                                 <br>
-								<div id="holder" style="margin-left:35px;">
+								<div id="holder" style="margin-left:-40px;">
 									<div class="xs modal" style="width:80px; height:83px; font-size:200%; " >
 										<div class="at_num">1</div>
 										<div class="symbol"><abbr class="sym" title="">H</abbr>
@@ -890,15 +892,15 @@
 									</div>
 								</div>
                                 {% csrf_token %}
-                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:90px;margin-left:60px">
+                                <div style="position: absolute; top: 0; width: 55px; text-align:left;margin-top:90px;margin-left:25px">
                                     <input class="latexFormat" name="atomicMass" type="text" placeholder="Atomic Mass" style="border-radius:5px">
                                 </div>
-                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:90px;margin-right:40px;">
+                                <div style="position: absolute; top: 0; right: 0; width: 55px; text-align:right;margin-top:90px;margin-right:80px;">
                                     <input class="latexFormat" name="number" type="text" placeholder="Number" style="border-radius:5px">
                                 </div>
                                 </center>
 
-                                <div class="row" style="margin-left:48px;">
+                                <div class="row" style="margin-left:15px;">
                                     <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >+</button>
                                     <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >-</button>
                                     <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >&#8594;</button>
@@ -906,18 +908,6 @@
                                     <button type="small radius button" style="font-family: 'Open Sans Condensed', sans-serif;background-color:#8CD5E6;border-radius:1px;z-index:5;margin-top:30px;bottom:auto;top:auto;vertical-align: text-top;height:70%;padding-top:4px;padding-bottom:8px;padding-left:15px;padding-right:15px;border-radius:6px;" >&#8596;</button>
                                 </div>
                             </div>
-                        <div class="row">
-                            <div class="large-12 columns">
-                            <hr>
-                                <center>
-                                <p>Latex:<span id="latex"><br><br></span></p>
-                                </center>
-                                <hr>
-                                <center>
-                                <p>Plaintext:<span id="latex"><br></span></p>
-                                </center>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
