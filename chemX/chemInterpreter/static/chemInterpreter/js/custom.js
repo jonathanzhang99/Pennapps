@@ -22,9 +22,10 @@ for (var j=0; j<latexFormat.length; j++){
 		console.log(latexFormat[place].value);
 		xhr = new XMLHttpRequest()
 		xhr.open("POST", "/", false);
-		xhr.send({
-			
-		})
+		xhr.send(JSON.stringify{
+			"chemType": "element",
+			"value": latexFormat[place].value
+		});
 		// $.ajax({
 		// 	url: "/",
 		// 	type: "POST",
@@ -96,6 +97,12 @@ function removeAllAutocompleteWords() {
 }
 $("#searchinput").keyup(function() {
 	if (this.value) {
+		xhr = new XMLHttpRequest()
+		xhr.open("POST", "/", false);
+		xhr.send(JSON.stringify{
+			"chemType": "element",
+			"value": this.value;
+		});
 		addAutocompleteWord(this.value);
 	} else {
 		removeAllAutocompleteWords();
