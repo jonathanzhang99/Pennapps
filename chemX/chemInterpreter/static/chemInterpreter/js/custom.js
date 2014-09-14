@@ -21,7 +21,13 @@ for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mouseenter", function() {
 		if (!disableHover) {
 			var xhr = new XMLHttpRequest();
-			document.getElementById("holder").firstChild.innerHTML = this.innerHTML;
+            console.log(this.outerHTML);
+			$("#holder").html(this.outerHTML);
+            document.getElementById("holder").firstChild.style.width="80px";
+            document.getElementById("holder").firstChild.style.height="83px";
+            document.getElementById("holder").firstChild.style.fontSize="200%";
+            document.getElementById("holder").firstChild.style.verticalAlign="top-text";
+            document.getElementById("holder").style.marginTop="10px";
 			// this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML <-- chemical symbol for element
 			// xhr.open("POST", serverURL /* to be filled in */ , false /* make async later */ );
 			// xhr.send(this.getElementsByTagName("div")[1].firstChild.firstChild.innerHTML);
@@ -39,8 +45,12 @@ for (var i = 0; i < elements.length; i++) {
 			document.getElementById("holder").innerHTML = "";
 		} else {
 			disableHover = true;
-			document.getElementById("holder").firstChild.innerHTML = this.innerHTML;
-		}
+			$("#holder").html(this.outerHTML);
+            document.getElementById("holder").firstChild.style.width="80px";
+            document.getElementById("holder").firstChild.style.height="83px";
+            document.getElementById("holder").firstChild.style.fontSize="200%";
+            document.getElementById("holder").firstChild.style.verticalAlign="top-text";
+            document.getElementById("holder").style.marginTop="10px";	}
 	});
 }
 
