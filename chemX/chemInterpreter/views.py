@@ -37,7 +37,8 @@ def formulaToLatex(name):
 	latexstr = '/ce{%s}'
 	latexname = ''
 	elements = re.findall('[A-Z][^A-Z]*', name)
-	for (elem in elements):
+	for elem in elements:
+		pass
 		
 def index(req):
 
