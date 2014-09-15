@@ -17,17 +17,19 @@ def textToLatex(name, neutrons=None, charge=None, atomicMass=None, number=None):
 
 	try:
 		if charge != '' and int(charge) != 0:
+			sign = ''
 			latexname += "^"
-		if int(charge) > 0:?m 
-			sign = '+'
-		elif or charge == '-':
-			sign = '-'
-		if abs(int(charge)) != 1:
-			sign = str(abs(int(charge)))+sign
-		latexname += sign
-	except SyntaxError:
+			if int(charge) > 0:
+				sign = '+'
+			else:
+				sign = '-'
+			if abs(int(charge)) != 1:
+				sign = str(abs(int(charge)))+sign
+			latexname += sign
+	except ValueError:
 		if charge == '-':
 			latexname += '-' 
+
 	if atomicMass != '':
 		latexname = "_{" + str(atomicMass) + "}" + latexname
 
